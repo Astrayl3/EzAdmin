@@ -1,35 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap');
 
+/* ===== Global Layout ===== */
 html,
 body,
 #root,
 .app,
-.content{
+.content {
   height: 100%;
   width: 100%;
   font-family: "Source Sans 3", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app{
+.app {
   display: flex;
   position: relative;
 }
 
-::-webkit-scrollbar{
-  width: 10px;
+/* Hide scrollbar everywhere */
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  /* for Internet Explorer, Edge */
+  scrollbar-width: none;     /* for Firefox */
 }
 
-/*Track*/
-::-webkit-scrollbar-track{
-  background: #e0e0e0;
+/* Container (centered card) */
+.auth-container {
+  width: min(90%, 400px);
+  margin: 8vh auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  text-align: center;
+}
+/* Title */
+.auth-title {
+  text-align: center;
+  font-size: clamp(22px, 4vw, 28px);
+  color: #1c1e21;
+  margin-bottom: clamp(16px, 3vw, 24px);
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb{
-  background: #888;
+/* Input fields */
+.auth-input {
+  width: 100%;
+  padding: clamp(10px, 2.5vw, 14px) clamp(12px, 3vw, 16px);
+  margin: 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: clamp(14px, 3vw, 16px);
 }
 
-/* Handle on Hover */
-::-webkit-scrollbar-track:hover{
-  background: #555;
+/* Primary (Login) button */
+.btn-primary {
+  width: 100%;
+  padding: clamp(10px, 2.5vw, 12px);
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1877f2;
+  color: white;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #166fe5;
+}
+
+/* Secondary (Register) button */
+.btn-secondary {
+  display: inline-block;
+  width: 100%;
+  padding: clamp(10px, 2.5vw, 12px);
+  border: none;
+  border-radius: 6px;
+  background-color: #42b72a;
+  color: white;
+  font-size: clamp(15px, 3.5vw, 18px);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.btn-secondary:hover {
+  background-color: #36a420;
+}
+
+/* Forgot link + switch text */
+.auth-link {
+  display: block;
+  color: #1877f2;
+  text-align: center;
+  margin: clamp(10px, 2vw, 16px) 0;
+  text-decoration: none;
+  font-size: clamp(13px, 3vw, 15px);
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Separator line */
+.auth-separator {
+  border-bottom: 1px solid #dadde1;
+  margin: clamp(16px, 3vw, 20px) 0;
+}
+
+/* Error text */
+.auth-error {
+  color: red;
+  font-size: clamp(13px, 3vw, 15px);
+  margin-top: 10px;
 }
