@@ -16,11 +16,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
     } catch (err) {
-<<<<<<< HEAD
-      setError("Sai email hoặc mật khẩu!");
-=======
       setError("Wrong email or password!");
->>>>>>> 9e713fe71311b4aa1de19fbaa962b3b7b5935dfb
     }
   };
 
